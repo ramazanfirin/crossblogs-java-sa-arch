@@ -1,0 +1,6 @@
+172.21.0.1 - - [20/May/2018:06:04:35 +0000] "GET / HTTP/1.1" 404 306 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36" "-"
+172.21.0.1 - - [20/May/2018:06:04:35 +0000] "GET /favicon.ico HTTP/1.1" 200 946 "http://localhost:9000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36" "-"
+172.21.0.1 - - [20/May/2018:06:04:43 +0000] "GET /articles/1 HTTP/1.1" 200 218 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36" "-"
+172.21.0.1 - - [20/May/2018:06:13:07 +0000] "GET / HTTP/1.1" 404 306 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36" "-"
+172.21.0.1 - - [20/May/2018:06:17:04 +0000] "GET / HTTP/1.1" 404 306 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36" "-"
+172.21.0.1 - - [20/May/2018:06:17:05 +0000] "GET / HTTP/1.1" 404 306 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.119 Safari/537.36" "-"

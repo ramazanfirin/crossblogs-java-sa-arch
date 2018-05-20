@@ -2,7 +2,10 @@ package com.crossover.techtrial.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -24,7 +27,7 @@ public class ArticleController {
   ArticleService articleService;
 
   @PostMapping(path = "articles")
-  public ResponseEntity<Article> createArticle(@RequestBody Article article) {
+  public ResponseEntity<Article> createArticle(@Valid @RequestBody Article article) {
     return new ResponseEntity<>(articleService.save(article), HttpStatus.CREATED);
   }
 
@@ -35,10 +38,14 @@ public class ArticleController {
       return new ResponseEntity<>(article, HttpStatus.OK);
     return new ResponseEntity<>(HttpStatus.NOT_FOUND);
   }
+  
+  @GetMapping(path = "articles")
+  public ResponseEntity<List<Article>> findArticles(Pageable pageable) {
+      return new ResponseEntity<>(articleService.findAll(pageable).getContent(), HttpStatus.OK);
+  }
 
-  @PutMapping(path = "articles/{article-id}")
-  public ResponseEntity<Article> updateArticle(@PathVariable("article-id") Long id,
-      @RequestBody Article article) {
+  @PutMapping(path = "articles")
+  public ResponseEntity<Article> updateArticle(@Valid @RequestBody Article article) {
     return new ResponseEntity<>(articleService.save(article), HttpStatus.OK);
   }
 

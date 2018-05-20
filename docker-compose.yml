@@ -1,14 +1,22 @@
-version: '2'
-
+version: "2"
 services:
+  
   crossblogs-app:
     image: crossblogs
-    ports:
-      - 8080:8080
     depends_on:
       - crossblogs-mysql
 
   crossblogs-mysql:
     extends:
         file: mysql.yml
-        service: crossblogs-mysql
+        service: crossblogs-mysql    
+   
+  nginx:
+    image: nginx:stable-alpine
+    ports:
+      - 9000:80
+    depends_on:
+      - crossblogs-app
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./var/log/nginx:/var/log/nginx 
